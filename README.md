@@ -6,17 +6,17 @@ Setup
 
 In 'composer.json' file add the following lines:
 
-{
-    "repositories":[
         {
-            "type":"vcs",
-            "url":"git@github.com:ScorpWebs/fpdf-phalcon.git" 
+            "repositories":[
+                {
+                    "type":"vcs",
+                    "url":"git@github.com:ScorpWebs/fpdf-phalcon.git" 
+                }
+            ],
+            "require": {
+                        "scorpwebs/fpdf-phalcon": "dev-master"
+            }
         }
-    ],
-    "require": {
-		"scorpwebs/fpdf-phalcon": "dev-master"
-    }
-}
 
 
 Now execute `php composer.phar update` or `composer update`.
