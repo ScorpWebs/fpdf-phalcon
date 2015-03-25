@@ -8,6 +8,7 @@
 *******************************************************************************/
 
 define('FPDF_VERSION','1.7');
+namespace ScorpWebs\Fpdf;
 
 class FPDF
 {
