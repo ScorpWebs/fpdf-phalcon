@@ -6,9 +6,9 @@
 * Date:    2011-06-18                                                          *
 * Author:  Olivier PLATHEY                                                     *
 *******************************************************************************/
-
-define('FPDF_VERSION','1.7');
 namespace ScorpWebs\Fpdf;
+define('FPDF_VERSION','1.7');
+
 
 class FPDF
 {
