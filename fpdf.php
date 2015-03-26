@@ -6,7 +6,8 @@
 * Date:    2011-06-18                                                          *
 * Author:  Olivier PLATHEY                                                     *
 *******************************************************************************/
-namespace ScorpWebs\Fpdf;
+
+namespace ScorpWebs\Tools;
 define('FPDF_VERSION','1.7');
 
 
@@ -108,13 +109,17 @@ function FPDF($orientation='P', $unit='mm', $size='A4')
 		$this->fontpath = FPDF_FONTPATH;
 		if(substr($this->fontpath,-1)!='/' && substr($this->fontpath,-1)!='\\')
 			$this->fontpath .= '/';
+
 	}
 	elseif(is_dir(dirname(__FILE__).'/font'))
 		$this->fontpath = dirname(__FILE__).'/font/';
 	else
 		$this->fontpath = '';
+	
+
 	// Core fonts
-	$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
+	if(!isset($this->CoreFonts))
+		$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
 	// Scale factor
 	if($unit=='pt')
 		$this->k = 1;
@@ -524,6 +529,9 @@ function SetFont($family, $style='', $size=0)
 		// Test if one of the core fonts
 		if($family=='arial')
 			$family = 'helvetica';
+		$this->CoreFonts = ['courier', 'helvetica', 'times', 'symbol', 'zapfdingbats'];
+		//var_dump($this->CoreFonts);
+		//die();
 		if(in_array($family,$this->CoreFonts))
 		{
 			if($family=='symbol' || $family=='zapfdingbats')
@@ -1143,6 +1151,9 @@ function _endpage()
 function _loadfont($font)
 {
 	// Load a font definition file from the font directory
+	if($this->fontpath == '')
+		$this->fontpath = __DIR__ . '/font/';
+	
 	include($this->fontpath.$font);
 	$a = get_defined_vars();
 	if(!isset($a['name']))
