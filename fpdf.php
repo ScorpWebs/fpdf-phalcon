@@ -115,8 +115,7 @@ function FPDF($orientation='P', $unit='mm', $size='A4')
 	else
 		$this->fontpath = '';
 	// Core fonts
-        echo $this->fontpath = '';
-        die();
+        
 	$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
 	// Scale factor
 	if($unit=='pt')
@@ -1145,6 +1144,8 @@ function _endpage()
 
 function _loadfont($font)
 {
+    if($this->fontpath == '')
+-		$this->fontpath = __DIR__ . '/font/';
 	// Load a font definition file from the font directory
 	include($this->fontpath.$font);
 	$a = get_defined_vars();
