@@ -8,6 +8,7 @@
 *******************************************************************************/
 
 namespace ScorpWebs\Tools;
+
 define('FPDF_VERSION','1.7');
 
 class FPDF
@@ -114,6 +115,8 @@ function FPDF($orientation='P', $unit='mm', $size='A4')
 	else
 		$this->fontpath = '';
 	// Core fonts
+        echo $this->fontpath = '';
+        die();
 	$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
 	// Scale factor
 	if($unit=='pt')
