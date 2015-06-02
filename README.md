@@ -37,6 +37,7 @@ Usage
         ));
 
 // app/controllers/PruebaController.php
+
         use ScorpWebs\Tools as Tool;
         require_once __DIR__ . '/../../vendor/scorpwebs/fpdf-phalcon/fpdf.php';
 

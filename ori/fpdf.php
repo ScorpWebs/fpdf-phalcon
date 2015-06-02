@@ -7,7 +7,6 @@
 * Author:  Olivier PLATHEY                                                     *
 *******************************************************************************/
 
-namespace ScorpWebs\Tools;
 define('FPDF_VERSION','1.7');
 
 class FPDF
