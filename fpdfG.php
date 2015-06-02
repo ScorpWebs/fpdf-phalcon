@@ -10,7 +10,7 @@
 
 namespace ScorpWebs\Tools;
 
-require_once './fpdf.php';
+require_once 'fpdf.php';
     class pdfG extends FPDF
     {
       function __construct()
